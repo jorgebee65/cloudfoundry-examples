@@ -1,0 +1,10 @@
+---
+applications:
+- name: test-app
+  instances: ((instances))
+  memory: ((memory))
+  buildpacks:
+  - go_buildpack
+  env:
+    GOPACKAGENAME: go_calls_ruby
+  command: go_calls_ruby
