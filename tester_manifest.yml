@@ -3,8 +3,20 @@ applications:
   - name: tester
     memory: 1G
     instances: 1
+    health-check-http-endpoint: /healthcheckmain
+    health-check-type: https
+    timeout: 20
+    processes:
+      - type: web
+        command: start-web.sh
+        disk_quota: 512M
+        health-check-http-endpoint: /healthcheck
+        health-check-type: http
+        instances: 3
+        memory: 500M
+        timeout: 10
     routes:
-      - route: preprod.apps.starcommandblue.cf-app.com
+      - route: preprod.apps.vividlimegreen.cf-app.com
     buildpacks:
       - java_buildpack_offline
     env:
