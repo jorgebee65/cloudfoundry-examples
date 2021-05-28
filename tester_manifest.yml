@@ -1,11 +1,11 @@
 ---
 applications:
   - name: tester
-    memory: 1G
+    memory: 1024M
     instances: 1
     health-check-http-endpoint: /healthcheck
     health-check-type: http
-    timeout: 20
+    timeout: 10
     processes:
       - type: web
         disk_quota: 512M
