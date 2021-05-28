@@ -13,7 +13,7 @@ applications:
         health-check-type: http
         health-check-invocation-timeout: 10
         instances: 1
-        memory: 1G
+        memory: 512M
         timeout: 10
     routes:
       - route: preprod.apps.vividlimegreen.cf-app.com
