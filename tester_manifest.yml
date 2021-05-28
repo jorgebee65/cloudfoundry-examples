@@ -12,7 +12,7 @@ applications:
         health-check-http-endpoint: /healthcheck
         health-check-type: http
         health-check-invocation-timeout: 10
-        instances: 3
+        instances: 1
         memory: 1G
         timeout: 10
     routes:
