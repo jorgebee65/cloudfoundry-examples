@@ -4,7 +4,7 @@ applications:
     memory: 1G
     instances: 1
     health-check-http-endpoint: /healthcheckmain
-    health-check-type: https
+    health-check-type: http
     timeout: 20
     processes:
       - type: web
