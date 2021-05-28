@@ -3,18 +3,18 @@ applications:
   - name: tester
     memory: 1024M
     instances: 1
-    health-check-http-endpoint: /healthcheck
+    health-check-http-endpoint: /
     health-check-type: http
-    timeout: 10
+    timeout: 1
     processes:
       - type: web
         disk_quota: 512M
-        health-check-http-endpoint: /healthcheck
+        health-check-http-endpoint: /
         health-check-type: http
-        health-check-invocation-timeout: 10
+        health-check-invocation-timeout: 1
         instances: 1
         memory: 512M
-        timeout: 10
+        timeout: 1
     routes:
       - route: preprod.apps.vividlimegreen.cf-app.com
     buildpacks:
