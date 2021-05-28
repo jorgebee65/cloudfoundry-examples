@@ -3,12 +3,11 @@ applications:
   - name: tester
     memory: 1G
     instances: 1
-    health-check-http-endpoint: /healthcheckmain
+    health-check-http-endpoint: /healthcheck
     health-check-type: http
     timeout: 20
     processes:
       - type: web
-        command: start-web.sh
         disk_quota: 512M
         health-check-http-endpoint: /healthcheck
         health-check-type: http
