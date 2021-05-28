@@ -8,12 +8,9 @@ applications:
     timeout: 20
     processes:
       - type: web
-        disk_quota: 512M
-        health-check-http-endpoint: /healthcheck
-        health-check-type: http
-        health-check-invocation-timeout: 10
+        disk_quota: 1G
         instances: 3
-        memory: 500M
+        memory: 1G
         timeout: 10
     routes:
       - route: preprod.apps.vividlimegreen.cf-app.com
