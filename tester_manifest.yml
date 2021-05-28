@@ -9,6 +9,9 @@ applications:
     processes:
       - type: web
         disk_quota: 1G
+        health-check-http-endpoint: /healthcheck
+        health-check-type: http
+        health-check-invocation-timeout: 10
         instances: 3
         memory: 1G
         timeout: 10
