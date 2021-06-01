@@ -1,23 +1,19 @@
 ---
 applications:
-  - name: tester
-    memory: 1024M
-    instances: 1
+- name: gs-rest-service
+  memory: 1G
+  instances: 1
+  health-check-http-endpoint: /actuator/health
+  health-check-type: http
+  timeout: 180
+  host: rest-service
+  path: build/libs/rest-service-0.0.1-SNAPSHOT.jar
+  processes:
+  - type: web
+    disk_quota: 1G
     health-check-http-endpoint: /actuator/health
     health-check-type: http
-    timeout: 1
-    processes:
-      - type: web
-        disk_quota: 512M
-        health-check-http-endpoint: /actuator/health
-        health-check-type: http
-        health-check-invocation-timeout: 1
-        instances: 1
-        memory: 512M
-        timeout: 1
-    routes:
-      - route: preprod.apps.vividlimegreen.cf-app.com
-    buildpacks:
-      - java_buildpack_offline
-    env:
-      JBP_CONFIG_OPEN_JDK_JRE: '{ jre: { version: 8.+ }}'
+    health-check-invocation-timeout: 1
+    instances: 1
+    memory: 1G
+    timeout: 180
